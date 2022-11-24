@@ -1,5 +1,6 @@
 package com.rezzhelp.chamado.entity;
 
+import com.rezzhelp.chamado.dto.CategoriaDTO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,4 +20,9 @@ public class Categoria {
 
     @Column(name = "DESCRICAO")
     private String descricao;
+
+    public Categoria(CategoriaDTO dado) {
+        this.id = dado.getId();
+        this.descricao = dado.getDescricao();
+    }
 }

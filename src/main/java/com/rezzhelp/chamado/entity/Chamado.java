@@ -1,5 +1,6 @@
 package com.rezzhelp.chamado.entity;
 
+import com.rezzhelp.chamado.dto.ChamadoDTO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -44,4 +45,16 @@ public class Chamado {
     @ManyToOne
     @JoinColumn(name = "CATEGORIA")
     private Categoria categoria;
+
+    public Chamado(ChamadoDTO dado) {
+        this.id = dado.getId();
+        this.descricao = dado.getDescricao();
+        this.responsavel = dado.getResponsavel();
+        this.status = dado.getStatus();
+        this.dtCriacao = dado.getDtCriacao();
+        this.dtFechamento = dado.getDtFechamento();
+        this.solicitante = dado.getSolicitante();
+        this.solucao = dado.getSolucao();
+        this.categoria = dado.getCategoria();
+    }
 }

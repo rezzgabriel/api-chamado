@@ -1,5 +1,6 @@
 package com.rezzhelp.chamado.entity;
 
+import com.rezzhelp.chamado.dto.SetorDTO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,4 +20,9 @@ public class Setor {
 
     @Column(name = "DESCRICAO")
     private String descricao;
+
+    public Setor(SetorDTO dado) {
+        this.id = dado.getId();
+        this.descricao = dado.getDescricao();
+    }
 }

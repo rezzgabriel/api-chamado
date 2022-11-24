@@ -22,4 +22,8 @@ public class UsuarioService {
         Usuario usuario = new Usuario(usuarioDTO);
         return this.usuarioRepository.save(usuario);
     }
+
+    public Usuario findById(Integer id) {
+        return usuarioRepository.findById(id).orElseThrow();
+    }
 }
