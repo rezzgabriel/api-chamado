@@ -26,4 +26,8 @@ public class UsuarioService {
     public Usuario findById(Integer id) {
         return usuarioRepository.findById(id).orElseThrow();
     }
+
+    public Usuario login(UsuarioDTO usuarioDTO) {
+        return usuarioRepository.login(usuarioDTO.getUsername(), usuarioDTO.getPassword());
+    }
 }

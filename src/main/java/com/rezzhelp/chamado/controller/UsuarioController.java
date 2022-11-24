@@ -31,5 +31,14 @@ public class UsuarioController {
         return this.usuarioService.save(usuarioDTO);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<Usuario> login(@RequestBody UsuarioDTO usuarioDTO) {
+
+        Usuario usuario = this.usuarioService.login(usuarioDTO);
+        if (usuario == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(usuario);
+    }
 
 }
